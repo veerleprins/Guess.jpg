@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/veerleprins/real-time-web-2021#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
     "socket.io": "^4.0.1"
   },
   "devDependencies": {
