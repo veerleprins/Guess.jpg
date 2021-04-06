@@ -1,2 +1,6 @@
+# Directories:
 assignment/
 node_modules/
+
+# Files:
+.env
