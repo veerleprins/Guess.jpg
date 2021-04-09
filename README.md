@@ -94,11 +94,11 @@ Now you can open http://localhost:PORTNAME/ in your browser (with the port that 
 
 ## :pencil: Checklist:
 
-- [] Document in README
-  - [] Description data-lifecycle
-  - [] Description real-time events
-  - [] Description external data source
-- [] Deploy to Heroku
+- [x] Set up the server
+- [x] Download socket.io
+- [ ] Come up with an idea for the real time app
+- [ ] Document in README
+- [ ] Deploy to Heroku
 
 ## :books: Sources
 
