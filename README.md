@@ -1,6 +1,6 @@
 # Guess.jpg
 
-<!-- Image of the project here -->
+<!-- Image of the project here - Maybe Mockup -->
 
 _by Veerle Prins_
 
