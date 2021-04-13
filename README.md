@@ -95,7 +95,7 @@ This endpoint ensures that a random photo is collected. This is important becaus
 
 After a request (HTTP GET) is made to the API (and if there are no errors) a response is sent back from the server API (HTTP response). This is a JSON object with information about the photo (s) being requested. Below is a response from the Unsplash API with some points of data available to you:
 
-```JSON
+```
 {
   "id": ,                 // ID of the photo
   "created_at": ,         // Photo created at date
