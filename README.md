@@ -220,14 +220,14 @@ Below I have added a checklist for the application. I used the MoSCoW method to 
 _Requirements:_
 
 - [x] Document all the work in README file.
-- [] Chat function working.
-- [] Create a room system, with an ID.
-- [] Handle users joining & leaving.
-- [] Fetch Unsplash data.
-- [] Show random, blurred image.
-- [] Winning guess gets a point.
-- [] Point system for every user.
-- [] Deploy Guess.jpg to Heroku.
+- [ ] Chat function working.
+- [ ] Create a room system, with an ID.
+- [ ] Handle users joining & leaving.
+- [ ] Fetch Unsplash data.
+- [ ] Show random, blurred image.
+- [ ] Winning guess gets a point.
+- [ ] Point system for every user.
+- [ ] Deploy Guess.jpg to Heroku.
 
 </details>
 
@@ -236,9 +236,9 @@ _Requirements:_
 
 _Wanted, but not necessary:_
 
-- [] Add good styling so that Guess.jpeg looks nice to look at.
-- [] Add user names to the chat.
-- [] Provide a hint option when users cannot guess the image.
+- [ ] Add good styling so that Guess.jpeg looks nice to look at.
+- [ ] Add user names to the chat.
+- [ ] Provide a hint option when users cannot guess the image.
 
 </details>
 
@@ -247,8 +247,8 @@ _Wanted, but not necessary:_
 
 _If there is enough time left:_
 
-- [] See when someone is typing in the chat.
-- [] See when someone is leaving in the chat.
+- [ ] See when someone is typing in the chat.
+- [ ] See when someone is leaving in the chat.
 
 </details>
 
