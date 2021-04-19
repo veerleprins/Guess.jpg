@@ -1,0 +1,15 @@
+<main class="create">
+  <h1>Create room</h1>
+  <form action="/room/<%= key %>" method="POST">
+    <label for="username">Username:</label>
+    <input type="hidden" name="gameID" value="<%= key %>" />
+    <input
+      type="text"
+      name="userName"
+      id="userName"
+      placeholder="Enter username..."
+      required
+    />
+    <input type="submit" value="Join room!" />
+  </form>
+</main>
