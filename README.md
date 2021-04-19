@@ -14,6 +14,8 @@ This repository shows a real time web application about **Guess.jpg**: A multipl
 
 My web application can be found at the link below:
 
+[Live Demo - Guess.jpg](https://guess-jpg.herokuapp.com/)
+
 ## :small_orange_diamond: Features
 
 With **Guess.jpg** you can play against other people to guess what is in the blurred photos. Because the library _socket.io_ is used, it is possible to chat and play in real-time.
@@ -220,14 +222,14 @@ Below I have added a checklist for the application. I used the MoSCoW method to 
 _Requirements:_
 
 - [x] Document all the work in README file.
-- [ ] Chat function working.
-- [ ] Create a room system, with an ID.
-- [ ] Handle users joining & leaving.
+- [x] Chat function working.
+- [x] Create a room system, with an ID.
+- [x] Handle users joining & leaving.
 - [ ] Fetch Unsplash data.
 - [ ] Show random, blurred image.
 - [ ] Winning guess gets a point.
 - [ ] Point system for every user.
-- [ ] Deploy Guess.jpg to Heroku.
+- [x] Deploy Guess.jpg to Heroku.
 
 </details>
 
@@ -237,7 +239,7 @@ _Requirements:_
 _Wanted, but not necessary:_
 
 - [ ] Add good styling so that Guess.jpeg looks nice to look at.
-- [ ] Add user names to the chat.
+- [x] Add user names to the chat.
 - [ ] Provide a hint option when users cannot guess the image.
 
 </details>
@@ -248,7 +250,7 @@ _Wanted, but not necessary:_
 _If there is enough time left:_
 
 - [ ] See when someone is typing in the chat.
-- [ ] See when someone is leaving in the chat.
+- [x] See when someone is leaving in the chat.
 
 </details>
 
@@ -257,10 +259,10 @@ _If there is enough time left:_
 
 _For in the future:_
 
-- [] Indicate what level of difficulty you want.
-- [] Instead of taking turns guessing that the person who gives the correct answer the fastest wins.
-- [] Create a scoreboard page with all high scores.
-- [] Look back to see which photos you guessed correctly.
+- [ ] Indicate what level of difficulty you want.
+- [ ] Instead of taking turns guessing that the person who gives the correct answer the fastest wins.
+- [ ] Create a scoreboard page with all high scores.
+- [ ] Look back to see which photos you guessed correctly.
 
 </details>
 
