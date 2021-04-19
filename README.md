@@ -291,7 +291,9 @@ The sources I've used to create this real time web application:
 <details style="margin: 1em 0;">
   <summary style="margin: 1em 0;">Backend</summary>
 - socket.io. (2021, 11 april). Get started. https://socket.io/get-started/chat
-- Unsplash. (z.d.). API Documentation | Free HD Photo API. Unsplash Developers. Geraadpleegd op 12 april 2021, van https://unsplash.com/documentation#get-a-random-photo
+- Unsplash. (z.d.). API Documentation | Free HD Photo API. Unsplash Developers. Retrieved 12 April 2021, from https://unsplash.com/documentation#get-a-random-photo
+- Traversy Media. (2020, 24 maart). Realtime Chat With Users & Rooms - Socket.io, Node & Express [Video]. YouTube. https://www.youtube.com/watch?v=jD7FnbI76Hg&t=494s
+- Traversy, B. (z.d.). bradtraversy/chatcord. GitHub. Retrieved 14 April 2021, from https://github.com/bradtraversy/chatcord/blob/master/server.js
 </details>
 
 ## :lock: License
