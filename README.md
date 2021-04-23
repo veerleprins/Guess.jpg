@@ -238,7 +238,7 @@ _Requirements:_
 
 _Wanted, but not necessary:_
 
-- [ ] Add good styling so that Guess.jpeg looks nice to look at.
+- [x] Add good styling so that Guess.jpeg looks nice to look at.
 - [x] Add user names to the chat.
 - [ ] Provide a hint option when users cannot guess the image.
 
@@ -286,15 +286,35 @@ The sources I've used to create this real time web application:
 
 <details style="margin: 1em 0;">
   <summary style="margin: 1em 0;">Frontend</summary>
+
+- Rosu, C. (2013, 29 april). Removing an element with the plain JavaScript remove() method. Catalin Red. https://catalin.red/removing-an-element-with-plain-javascript-remove-method/
+- Coyier, C., Damme, T., Merkenich, J., Coyier, C., Coyier, C., Mejia, L., Coyier, C., Coyier, C., Coyier, C., House, C., Seyedi, M., Gaebel, D., Gaebel, D., Khare, M., Graham, G., Coyier, C., Coyier, C., Coyier, C., Coyier, C., . . . Coyier, C. (2021, 7 april). A Complete Guide to Flexbox. CSS-Tricks. https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
 </details>
 
 <details style="margin: 1em 0;">
   <summary style="margin: 1em 0;">Backend</summary>
+
 - socket.io. (2021, 11 april). Get started. https://socket.io/get-started/chat
 - Unsplash. (z.d.). API Documentation | Free HD Photo API. Unsplash Developers. Retrieved 12 April 2021, from https://unsplash.com/documentation#get-a-random-photo
 - Traversy Media. (2020, 24 maart). Realtime Chat With Users & Rooms - Socket.io, Node & Express [Video]. YouTube. https://www.youtube.com/watch?v=jD7FnbI76Hg&t=494s
 - Traversy, B. (z.d.). bradtraversy/chatcord. GitHub. Retrieved 14 April 2021, from https://github.com/bradtraversy/chatcord/blob/master/server.js
 </details>
+
+<!--
+https://www.programiz.com/javascript/examples/get-random-item
+https://stackoverflow.com/questions/45071353/copy-text-string-on-click
+https://github.com/agilebluefox/pictionary
+https://codepen.io/nikhil8krishnan/pen/NNyJGd
+
+API documentation:
+https://unsplash.com/documentation
+
+OLD for chat:
+https://www.youtube.com/watch?v=jD7FnbI76Hg&t=494s
+https://www.youtube.com/watch?v=FvArk8-qgCk
+https://socket.io/docs/v3/rooms/
+ -->
 
 ## :lock: License
 
