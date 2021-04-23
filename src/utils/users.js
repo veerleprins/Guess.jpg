@@ -6,6 +6,8 @@ function userJoin(ID, userName, room) {
     id: ID,
     name: userName,
     roomID: room,
+    score: 0,
+    role: null,
   };
   users.push(user);
 
@@ -26,7 +28,7 @@ function userLeave(id) {
 
 // Get Room users
 function getRoomUsers(room) {
-  return users.filter((user) => user.room === room);
+  return users.filter((user) => user.roomID === room);
 }
 
 module.exports = {
