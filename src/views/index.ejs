@@ -1,26 +1,41 @@
+<%- include ("partials/header.ejs") %>
 <main class="home">
-  <h1>Welcome to Guess.jpg!</h1>
-
-  <form action="/enterRoom" method="POST">
-    <fieldset>
-      <label>
-        GameID:
-        <input
-          type="text"
-          name="gameID"
-          id="gameID"
-          required
-          autocomplete="off"
-        />
-      </label>
-
-      <label>
-        UserName:
-        <input type="text" name="userName" id="userName" required />
-      </label>
-      <input type="submit" value="Enter room" />
-    </fieldset>
-  </form>
-  <button>Create new key</button>
-  <p><%= newKey %></p>
+  <section>
+    <h1>Welcome to Guess.jpg!</h1>
+    <div>
+      <form action="/enterRoom" method="POST">
+        <fieldset>
+          <label>
+            User name:
+            <input
+              type="text"
+              name="userName"
+              id="userName"
+              minlength="2"
+              maxlength="20"
+              placeholder="John"
+              required
+            />
+          </label>
+          <label>
+            Game ID:
+            <input
+              type="text"
+              name="gameID"
+              id="gameID"
+              required
+              placeholder="qktwi1xabkuot56zs"
+              autocomplete="off"
+            />
+          </label>
+          <input type="submit" value="Join room" />
+        </fieldset>
+      </form>
+      <div>
+        <button>Create new key</button>
+        <p class="key"><%= newKey %></p>
+      </div>
+    </div>
+  </section>
 </main>
+<%- include ("partials/footer.ejs") %>
