@@ -1,6 +1,6 @@
 # Guess.jpg
 
-<!-- Image of the project here -->
+<!-- Image of the project here - Maybe Mockup -->
 
 _by Veerle Prins_
 
@@ -13,6 +13,8 @@ This repository shows a real time web application about **Guess.jpg**: A multipl
 ## :globe_with_meridians: Live Link
 
 My web application can be found at the link below:
+
+[Live Demo - Guess.jpg](https://guess-jpg.herokuapp.com/)
 
 ## :small_orange_diamond: Features
 
@@ -220,14 +222,14 @@ Below I have added a checklist for the application. I used the MoSCoW method to 
 _Requirements:_
 
 - [x] Document all the work in README file.
-- [ ] Chat function working.
-- [ ] Create a room system, with an ID.
-- [ ] Handle users joining & leaving.
+- [x] Chat function working.
+- [x] Create a room system, with an ID.
+- [x] Handle users joining & leaving.
 - [ ] Fetch Unsplash data.
 - [ ] Show random, blurred image.
 - [ ] Winning guess gets a point.
 - [ ] Point system for every user.
-- [ ] Deploy Guess.jpg to Heroku.
+- [x] Deploy Guess.jpg to Heroku.
 
 </details>
 
@@ -236,8 +238,8 @@ _Requirements:_
 
 _Wanted, but not necessary:_
 
-- [ ] Add good styling so that Guess.jpeg looks nice to look at.
-- [ ] Add user names to the chat.
+- [x] Add good styling so that Guess.jpeg looks nice to look at.
+- [x] Add user names to the chat.
 - [ ] Provide a hint option when users cannot guess the image.
 
 </details>
@@ -248,7 +250,7 @@ _Wanted, but not necessary:_
 _If there is enough time left:_
 
 - [ ] See when someone is typing in the chat.
-- [ ] See when someone is leaving in the chat.
+- [x] See when someone is leaving in the chat.
 
 </details>
 
@@ -257,10 +259,10 @@ _If there is enough time left:_
 
 _For in the future:_
 
-- [] Indicate what level of difficulty you want.
-- [] Instead of taking turns guessing that the person who gives the correct answer the fastest wins.
-- [] Create a scoreboard page with all high scores.
-- [] Look back to see which photos you guessed correctly.
+- [ ] Indicate what level of difficulty you want.
+- [ ] Instead of taking turns guessing that the person who gives the correct answer the fastest wins.
+- [ ] Create a scoreboard page with all high scores.
+- [ ] Look back to see which photos you guessed correctly.
 
 </details>
 
@@ -284,13 +286,35 @@ The sources I've used to create this real time web application:
 
 <details style="margin: 1em 0;">
   <summary style="margin: 1em 0;">Frontend</summary>
+
+- Rosu, C. (2013, 29 april). Removing an element with the plain JavaScript remove() method. Catalin Red. https://catalin.red/removing-an-element-with-plain-javascript-remove-method/
+- Coyier, C., Damme, T., Merkenich, J., Coyier, C., Coyier, C., Mejia, L., Coyier, C., Coyier, C., Coyier, C., House, C., Seyedi, M., Gaebel, D., Gaebel, D., Khare, M., Graham, G., Coyier, C., Coyier, C., Coyier, C., Coyier, C., . . . Coyier, C. (2021, 7 april). A Complete Guide to Flexbox. CSS-Tricks. https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
 </details>
 
 <details style="margin: 1em 0;">
   <summary style="margin: 1em 0;">Backend</summary>
+
 - socket.io. (2021, 11 april). Get started. https://socket.io/get-started/chat
-- Unsplash. (z.d.). API Documentation | Free HD Photo API. Unsplash Developers. Geraadpleegd op 12 april 2021, van https://unsplash.com/documentation#get-a-random-photo
+- Unsplash. (z.d.). API Documentation | Free HD Photo API. Unsplash Developers. Retrieved 12 April 2021, from https://unsplash.com/documentation#get-a-random-photo
+- Traversy Media. (2020, 24 maart). Realtime Chat With Users & Rooms - Socket.io, Node & Express [Video]. YouTube. https://www.youtube.com/watch?v=jD7FnbI76Hg&t=494s
+- Traversy, B. (z.d.). bradtraversy/chatcord. GitHub. Retrieved 14 April 2021, from https://github.com/bradtraversy/chatcord/blob/master/server.js
 </details>
+
+<!--
+https://www.programiz.com/javascript/examples/get-random-item
+https://stackoverflow.com/questions/45071353/copy-text-string-on-click
+https://github.com/agilebluefox/pictionary
+https://codepen.io/nikhil8krishnan/pen/NNyJGd
+
+API documentation:
+https://unsplash.com/documentation
+
+OLD for chat:
+https://www.youtube.com/watch?v=jD7FnbI76Hg&t=494s
+https://www.youtube.com/watch?v=FvArk8-qgCk
+https://socket.io/docs/v3/rooms/
+ -->
 
 ## :lock: License
 

@@ -1,8 +1,41 @@
-<body>
-  <%- include ("partials/header.ejs") %>
-  <main>
-    <h1>Title</h1>
-  </main>
-  <%- include ("partials/footer.ejs") %>
-  <script src="/js/socket.js"></script>
-</body>
+<%- include ("partials/header.ejs") %>
+<main class="home">
+  <section>
+    <h1>Welcome to Guess.jpg!</h1>
+    <div>
+      <form action="/enterRoom" method="POST">
+        <fieldset>
+          <label>
+            User name:
+            <input
+              type="text"
+              name="userName"
+              id="userName"
+              minlength="2"
+              maxlength="20"
+              placeholder="John"
+              required
+            />
+          </label>
+          <label>
+            Game ID:
+            <input
+              type="text"
+              name="gameID"
+              id="gameID"
+              required
+              placeholder="qktwi1xabkuot56zs"
+              autocomplete="off"
+            />
+          </label>
+          <input type="submit" value="Join room" />
+        </fieldset>
+      </form>
+      <div>
+        <button>Create new key</button>
+        <p class="key"><%= newKey %></p>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include ("partials/footer.ejs") %>

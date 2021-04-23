@@ -1,0 +1,31 @@
+<main class="room">
+  <section>
+    <header>
+      <h1>Guess the JPG!</h1>
+    </header>
+    <div class="output">
+      <p>Game ID: <span class="roomID"><%= roomID %></span></p>
+      <p class="score">Your score: <span>0</span></p>
+    </div>
+    <button class="start">Start game!</button>
+  </section>
+  <section>
+    <header>
+      <h2>Group Chat</h2>
+    </header>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input type="hidden" id="roomID" name="<%= roomID %>" />
+      <input type="hidden" id="userName" name="<%= userName%>" />
+      <input
+        type="text"
+        id="input"
+        autocomplete="off"
+        placeholder="Write your message..."
+      />
+      <button>Send</button>
+    </form>
+  </section>
+</main>
+
+<script src="/js/main.js"></script>
