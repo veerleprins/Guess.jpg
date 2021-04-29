@@ -8,7 +8,7 @@ _by Veerle Prins_
 
 During the course _Real Time Web_ within the Minor Web Design & Development ([@cmda-minor-web](https://github.com/cmda-minor-web)) we learn to create a real time application using socket.io.
 
-This repository shows a real time web application about **Guess.jpg**: A multiplayer chat game to guess blurred images. This application is made with the [Unsplash API](https://unsplash.com/documentation).
+This repository shows a real time web application about **Guess.jpg**: A multiplayer chat game to guess a drawing of a specific image. This application is made with the [Unsplash API](https://unsplash.com/documentation).
 
 ## :globe_with_meridians: Live Link
 
@@ -18,9 +18,9 @@ My web application can be found at the link below:
 
 ## :small_orange_diamond: Features
 
-With **Guess.jpg** you can play against other people to guess what is in the blurred photos. Because the library _socket.io_ is used, it is possible to chat and play in real-time.
+With **Guess.jpg** you can play against other people to guess what the original photo was through a drawing. Because the library _socket.io_ is used, it is possible to chat and play in real-time.
 
-As a user you can first create a room. This will give you an ID that you can then forward to your friends so that they can play in the same room. When you are in a room, you can start with Guess.jpg. This way everyone in the room gets to see a blurred photo. Take turns guessing what is shown in the picture. The moment you have guessed the blurred photo, you win a point. When someone from the room has scored x points, you are the winner of the game!
+As a user you can first create a room. This will give you an ID that you can then forward to your friends so that they can play in the same room. When you are in a room, you can start with Guess.jpg. To start the game, a button will be pressed. The person designated as the 'drawer' is shown an image that he must draw so that the rest can guess what is in the original photo. The person who first guesses what the original image was in chat earns a point. When someone from the room has scored 5 points, you are the winner of the game!
 
 ## :pencil2: Ideas & Concept
 
@@ -225,10 +225,12 @@ _Requirements:_
 - [x] Chat function working.
 - [x] Create a room system, with an ID.
 - [x] Handle users joining & leaving.
-- [ ] Fetch Unsplash data.
-- [ ] Show random, blurred image.
-- [ ] Winning guess gets a point.
-- [ ] Point system for every user.
+- [x] Fetch Unsplash data.
+- [x] Show image.
+- [x] Winning guess gets a point.
+- [x] Point system for every user.
+- [ ] Make game play 5 rounds.
+- [ ] Game ends when someone has reached 5 points.
 - [x] Deploy Guess.jpg to Heroku.
 
 </details>
@@ -240,7 +242,6 @@ _Wanted, but not necessary:_
 
 - [x] Add good styling so that Guess.jpeg looks nice to look at.
 - [x] Add user names to the chat.
-- [ ] Provide a hint option when users cannot guess the image.
 
 </details>
 
@@ -249,8 +250,10 @@ _Wanted, but not necessary:_
 
 _If there is enough time left:_
 
-- [ ] See when someone is typing in the chat.
 - [x] See when someone is leaving in the chat.
+- [ ] See when someone is typing in the chat.
+- [ ] Provide a hint option when users cannot guess the drawing.
+- [ ] Adding emojis to chat.
 
 </details>
 
@@ -314,6 +317,12 @@ OLD for chat:
 https://www.youtube.com/watch?v=jD7FnbI76Hg&t=494s
 https://www.youtube.com/watch?v=FvArk8-qgCk
 https://socket.io/docs/v3/rooms/
+
+FRONTEND:
+https://daily-dev-tips.com/posts/javascript-mouse-drawing-on-the-canvas-%F0%9F%91%A8%E2%80%8D%F0%9F%8E%A8/
+https://codepen.io/rebelchris/pen/wvGbEVQ
+https://catalin.red/removing-an-element-with-plain-javascript-remove-method/
+https://stackoverflow.com/questions/2142535/how-to-clear-the-canvas-for-redrawing
  -->
 
 ## :lock: License
