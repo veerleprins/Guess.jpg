@@ -6,30 +6,52 @@ const messages = document.getElementById("messages");
 const form = document.getElementById("form");
 const input = document.getElementById("input");
 const userName = document.getElementById("userName").name;
-const roomID = document.getElementById("roomID").name;
+const roomID = document.querySelector(".roomID").innerText;
 const startGame = document.querySelector(".start");
 const outputDiv = document.querySelector(".output");
 const section = document.querySelector("section");
 const span = document.querySelector(".roomID");
+const buttonContainer = document.querySelector(".button-container");
+const send = document.getElementById("sendText");
+const scoreSpan = document.querySelector(".score");
+
+// Internals
+let drawing = false;
+let canvas = null;
+let ctx = null;
+let pos = {
+  x: 0,
+  y: 0,
+};
+const userObj = {
+  userName: userName,
+  roomID: roomID,
+  userRole: "",
+};
 
 // Sending user info to server
-socket.emit("join-room", { userName, roomID });
+socket.emit("join-room", { userName: userName, roomID: roomID, userRole: "" });
 
 // Adding event listeners
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (input.value) {
     // From specific client to server
-    const text = input.value;
-    socket.emit("chatMessage", { userName, text });
+    let text = input.value;
+    socket.emit("chatMessage", {
+      userName: userName,
+      role: "",
+      text,
+    });
     input.value = "";
     input.focus();
   }
 });
 
+//  STARTING THE GAME:
 startGame.addEventListener("click", (e) => {
-  console.log("Spel begint...");
-  socket.emit("startGame");
+  // Send to server:
+  socket.emit("startGame", userName);
 });
 
 // To copy Game ID
@@ -52,30 +74,127 @@ socket.on("message", (message) => {
   messages.scrollTop = messages.scrollHeight;
 });
 
-socket.on("removeButton", () => {
+socket.on("setupGame", () => {
+  // Removes button & adds canvas
+  canvas = createElement("canvas");
+  ctx = canvas.getContext("2d");
   startGame.parentNode.removeChild(startGame);
-  let canvas = createElement("canvas");
+  buttonContainer.remove();
   section.appendChild(canvas);
+  resize();
+  window.addEventListener("resize", resize);
 });
 
-socket.on("user-connected", (user) => {
-  let item = document.createElement("li");
-  item.textContent = `${user.username} ${user.text}`;
-  messages.appendChild(item);
+socket.on("showResult", async (data) => {
+  if (data.role !== "drawer") return;
+
+  console.log(`You need to draw: ${data.word}`);
+  addIMG(data.data);
+  canvas.addEventListener("mousedown", () => (drawing = true));
+  canvas.addEventListener("mouseup", () => {
+    drawing = false;
+    ctx.beginPath();
+  });
+  canvas.addEventListener("mousemove", (event) => {
+    if (!drawing) return;
+    reposition(event);
+    draw(pos);
+    socket.emit("draw", pos);
+  });
 });
 
-socket.on("showResult", (photo) => {
-  let figure = createElement("figure", "unsplashPhoto");
-  let button = createElement("button", "clear");
-  let img = createElement("img");
-  button.textContent = `Clear`;
-  outputDiv.appendChild(figure);
-  section.appendChild(button);
-  img.setAttribute("src", photo.urls.small);
-  figure.appendChild(img);
+socket.on("draw", (position) => {
+  ctx = canvas.getContext("2d");
+  draw(position);
+});
+
+socket.on("updatePoints", (score) => {
+  console.log(typeof score);
+  console.log(score);
+  if (score < 5) {
+    num = score.toString();
+    scoreSpan.textContent = num;
+  }
+});
+
+socket.on("messageIMG", (object) => {
+  let li = createElement("li");
+  let img = createElement("img", "guessedIMG");
+  let name = createElement("p", "name");
+  let text = createElement("p", "text");
+  text.textContent = object.info.text;
+  // name.textContent = `${object.info.username} - ${object.info.time}`
+  img.setAttribute("src", object.photoURL);
+  if (object.info.username === "Chat BOT") {
+    li.classList.add("bot-chats");
+  }
+  // li.appendChild(name);
+  li.appendChild(text);
+  li.appendChild(img);
+  messages.appendChild(li);
+});
+
+socket.on("removeSetup", () => {
+  let lastIMG = document.querySelector(".unsplashPhoto");
+  if (lastIMG) {
+    lastIMG.remove();
+  }
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx = null;
+  ctx = canvas.getContext("2d");
+});
+
+socket.on("newDrawer", () => {
+  socket.emit("newRound");
 });
 
 // All the functions
+function addIMG(photo) {
+  let figure = createElement("figure", "unsplashPhoto");
+  let figCap = createElement("figcaption", "caption");
+  let link = createElement("a");
+  link.href = photo.user.links.html;
+  link.textContent = photo.user.name;
+  // let button = createElement("button", "clear");
+  let img = createElement("img");
+  figCap.innerHTML = `Photo by ${link.outerHTML} on Unsplash.`;
+  // button.textContent = `Clear`;
+  // section.appendChild(button);
+  img.setAttribute("src", photo.urls.small);
+  img.setAttribute("alt", photo.alt_description);
+  figure.appendChild(img);
+  figure.appendChild(figCap);
+  outputDiv.appendChild(figure);
+}
+
+function reposition(event) {
+  pos.x = event.clientX - canvas.getBoundingClientRect().left;
+  pos.y = event.clientY - canvas.getBoundingClientRect().top;
+}
+
+function resize() {
+  canvas.height = 400;
+  canvas.width = (window.innerWidth / 100) * 62;
+  // setCanvas();
+}
+
+function setCanvas() {
+  ctx.beginPath();
+  ctx.rect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#0c4934";
+  ctx.fill();
+}
+
+function draw(position) {
+  ctx.beginPath();
+  ctx.strokeStyle = "#0c4934";
+  ctx.lineWidth = 10;
+  ctx.lineCap = "round";
+  ctx.lineTo(position.x, position.y);
+  ctx.moveTo(position.x, position.y);
+  ctx.stroke();
+}
+
 function outputMessage(msg) {
   let li = createElement("li");
   let name = createElement("p", "name");
@@ -91,6 +210,8 @@ function outputMessage(msg) {
   li.appendChild(text);
   if (msg.username === userName) {
     li.classList.add("own-chats");
+  } else if (msg.username === "Chat BOT") {
+    li.classList.add("bot-chats");
   }
   messages.appendChild(li);
 }

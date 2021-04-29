@@ -1,4 +1,4 @@
-const users = [];
+let users = [];
 
 // Join user to chat
 function userJoin(ID, userName, room) {
@@ -28,7 +28,13 @@ function userLeave(id) {
 
 // Get Room users
 function getRoomUsers(room) {
-  return users.filter((user) => user.roomID === room);
+  let roomUsers = users.filter((user) => user.roomID === room);
+  return roomUsers;
+}
+
+// All users
+function getAllUsers() {
+  return users;
 }
 
 module.exports = {
@@ -36,4 +42,5 @@ module.exports = {
   getCurrentUser,
   userLeave,
   getRoomUsers,
+  getAllUsers,
 };

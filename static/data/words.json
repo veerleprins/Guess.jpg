@@ -14,7 +14,6 @@
   "pencil",
   "door",
   "apple",
-  "orange",
   "bike",
   "skates",
   "feather",
@@ -23,7 +22,7 @@
   "sun",
   "skateboard",
   "cloud",
-  "phone",
+  "mobile",
   "t-shirt",
   "mother",
   "mouse",
@@ -31,5 +30,11 @@
   "rock",
   "house",
   "glasses",
-  "shoe"
+  "shoe",
+  "headphone",
+  "glass",
+  "fork",
+  "candle",
+  "spoon",
+  "mirror"
 ]

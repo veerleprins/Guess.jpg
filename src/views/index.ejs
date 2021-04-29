@@ -5,6 +5,7 @@
     <div>
       <form action="/enterRoom" method="POST">
         <fieldset>
+          <input type="hidden" name="<%= newKey %>" id="newKey" />
           <label>
             User name:
             <input
@@ -32,10 +33,10 @@
         </fieldset>
       </form>
       <div>
-        <button>Create new key</button>
-        <p class="key"><%= newKey %></p>
+        <button id="newGameKey">Create new key</button>
       </div>
     </div>
   </section>
 </main>
 <%- include ("partials/footer.ejs") %>
+<script src="/js/homeClient.js"></script>
